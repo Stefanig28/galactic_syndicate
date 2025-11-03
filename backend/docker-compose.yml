@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    # Comando de desarrollo con auto-recarga
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    # Monta el código para que los cambios sean instantáneos
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
